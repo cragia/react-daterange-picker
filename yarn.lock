@@ -1724,7 +1724,7 @@ __metadata:
     prop-types: ^15.6.0
     react: ^16.7.0
     react-calendar: ^3.0.0
-    react-date-picker: ^8.0.0
+    react-date-picker: "cragia/react-date-picker#master"
     react-dom: ^16.7.0
     react-fit: ^1.0.3
     react-test-renderer: ^16.7.0
@@ -2879,7 +2879,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"detect-element-overflow@npm:^1.2.0":
+"detect-element-overflow@npm:^1.1.1, detect-element-overflow@npm:^1.2.0":
   version: 1.2.0
   resolution: "detect-element-overflow@npm:1.2.0"
   checksum: 6d9b0332a60c0db91521419a266dc486fff12e736e3cfa2aa274f67da20ecccb3d122e060f6b7717cf93a243bf8a5d1e648c51c430e1754d9ece7b1a9dc09027
@@ -3948,6 +3948,15 @@ fsevents@^2.1.2:
   dependencies:
     pump: ^3.0.0
   checksum: 599dad0b6b9e41602c5a383d218e929209774e66bd3345d5ba6b87e305a16e5d4263936cab974804a30cfeebb1d9e6082f0dba4a463fcce0ba75b922b7c9d861
+  languageName: node
+  linkType: hard
+
+"get-user-locale@npm:^1.1.1":
+  version: 1.4.0
+  resolution: "get-user-locale@npm:1.4.0"
+  dependencies:
+    lodash.once: ^4.1.1
+  checksum: 3fee33d74173732c1a3895a584b271f993171b2ecc60b0a1b985d8c4f7625432d9152ce817f2759d7d075dbf6b16f219001c32b924ffb4b918c946be82b864fb
   languageName: node
   linkType: hard
 
@@ -6616,6 +6625,21 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
+"react-calendar@npm:^2.17.4":
+  version: 2.19.2
+  resolution: "react-calendar@npm:2.19.2"
+  dependencies:
+    get-user-locale: ^1.2.0
+    merge-class-names: ^1.1.1
+    prop-types: ^15.6.0
+    react-lifecycles-compat: ^3.0.4
+  peerDependencies:
+    react: ">=15.5"
+    react-dom: ">=15.5"
+  checksum: d4d211cf0fc39ed5304de00894af13ebc9dc0a71dede44418b0ac6c3614ff33764aec4453652235e77311fdf47f9ad29d33b9f6113797419227678cedce4f113
+  languageName: node
+  linkType: hard
+
 "react-calendar@npm:^3.0.0":
   version: 3.0.1
   resolution: "react-calendar@npm:3.0.1"
@@ -6631,22 +6655,21 @@ fsevents@^2.1.2:
   languageName: node
   linkType: hard
 
-"react-date-picker@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "react-date-picker@npm:8.0.0"
+"react-date-picker@cragia/react-date-picker#master":
+  version: 7.1.1
+  resolution: "react-date-picker@https://github.com/cragia/react-date-picker.git#commit=bb247f2a70f484620d368d47d5005aa9a5e4de72"
   dependencies:
-    "@wojtekmaj/date-utils": ^1.0.2
-    get-user-locale: ^1.2.0
+    detect-element-overflow: ^1.1.1
+    get-user-locale: ^1.1.1
     make-event-props: ^1.1.0
     merge-class-names: ^1.1.1
     prop-types: ^15.6.0
-    react-calendar: ^3.0.0
-    react-fit: ^1.0.3
-    update-input-width: ^1.1.1
+    react-calendar: ^2.17.4
+    react-lifecycles-compat: ^3.0.4
   peerDependencies:
-    react: ">=16.3"
-    react-dom: ">=16.3"
-  checksum: 059cefccc99dfced1f756afbdc19a969ff6e8ed0acbd4a4595634b1188bbd104a7b34d218e4e477b4e8605361c08dae2e934f6622f34467c830b3d1588f50be2
+    react: ">=15.5"
+    react-dom: ">=15.5"
+  checksum: 42291be18aa026551fc42dd1e5b365225ef015edc29d3fa9fb2ee3c0395c577862a2a19b56b3a55b66c8d975fa0c793a81b4ed34f1c5423cb3672a79bd9cccbe
   languageName: node
   linkType: hard
 
@@ -6681,6 +6704,13 @@ fsevents@^2.1.2:
   version: 16.13.0
   resolution: "react-is@npm:16.13.0"
   checksum: 122f38efe00aca3f8c391a90513cb5e2ef2710db164730c9c6125f2f089b5cd413f22669e06606c5d84df08086c9a6b50fae90efa532baa82bc3a7c5c3b8b5da
+  languageName: node
+  linkType: hard
+
+"react-lifecycles-compat@npm:^3.0.4":
+  version: 3.0.4
+  resolution: "react-lifecycles-compat@npm:3.0.4"
+  checksum: 82176a55ef7526414d770d5e07dc1d28b4c7f20281f22c6f53f3a98df9dbbb5d70c94bebee57b4ea8ccc2eee430b907ca7b564a42fbdd0ed21e7c43bfee35404
   languageName: node
   linkType: hard
 
@@ -8044,13 +8074,6 @@ fsevents@^2.1.2:
   version: 1.2.0
   resolution: "upath@npm:1.2.0"
   checksum: ecb08ff3e7e3b152e03bceb7089e6f0077bf3494764397a301eb99a7a5cd4c593ea4d0b13a7714195ad8a3ddca9d7a5964037a1c0bc712e1ba7b67a79165a0be
-  languageName: node
-  linkType: hard
-
-"update-input-width@npm:^1.1.1":
-  version: 1.2.1
-  resolution: "update-input-width@npm:1.2.1"
-  checksum: 596aeabe86fde376b09c5a29d7cc109b2628317b45fec57fd6e35512039297a425f311b42bdd3a5f4a3e200683a520a39c10b46b9537b774280c4d8c3cf060d2
   languageName: node
   linkType: hard
 
