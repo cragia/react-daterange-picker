@@ -227,6 +227,8 @@ var DateRangePicker = /*#__PURE__*/function (_PureComponent) {
   }, {
     key: "renderInputs",
     value: function renderInputs() {
+      var _this3 = this;
+
       var _this$props3 = this.props,
           autoFocus = _this$props3.autoFocus,
           calendarAriaLabel = _this$props3.calendarAriaLabel,
@@ -304,7 +306,11 @@ var DateRangePicker = /*#__PURE__*/function (_PureComponent) {
         className: "".concat(baseClassName, "__clear-button ").concat(baseClassName, "__button"),
         disabled: disabled,
         onClick: this.clear,
-        onFocus: this.stopPropagation,
+        onFocus: function onFocus(event) {
+          _this3.closeCalendar();
+
+          _this3.stopPropagation(event);
+        },
         type: "button"
       }, clearIcon), calendarIcon !== null && !disableCalendar && /*#__PURE__*/_react["default"].createElement("button", {
         "aria-label": calendarAriaLabel,
@@ -313,6 +319,7 @@ var DateRangePicker = /*#__PURE__*/function (_PureComponent) {
         onBlur: this.resetValue,
         onClick: this.toggleCalendar,
         onFocus: this.stopPropagation,
+        tabIndex: "-1",
         type: "button"
       }, calendarIcon));
     }
@@ -346,7 +353,7 @@ var DateRangePicker = /*#__PURE__*/function (_PureComponent) {
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
       var _this$props5 = this.props,
           className = _this$props5.className,
@@ -361,7 +368,7 @@ var DateRangePicker = /*#__PURE__*/function (_PureComponent) {
             return;
           }
 
-          _this3.wrapper = _ref;
+          _this4.wrapper = _ref;
         }
       }), this.renderInputs(), this.renderCalendar());
     }

@@ -211,7 +211,10 @@ export default class DateRangePicker extends PureComponent {
             className={`${baseClassName}__clear-button ${baseClassName}__button`}
             disabled={disabled}
             onClick={this.clear}
-            onFocus={this.stopPropagation}
+            onFocus={(event) => {
+              this.closeCalendar();
+              this.stopPropagation(event);
+            }}
             type="button"
           >
             {clearIcon}
@@ -225,6 +228,7 @@ export default class DateRangePicker extends PureComponent {
             onBlur={this.resetValue}
             onClick={this.toggleCalendar}
             onFocus={this.stopPropagation}
+            tabIndex="-1"
             type="button"
           >
             {calendarIcon}
